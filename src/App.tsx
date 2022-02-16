@@ -1,6 +1,5 @@
-import axios from 'axios';
-import {useQuery} from 'react-query';
-//faz uma revalidação dos dados na tela, detecta quando o usuário volta para tela e atualiza caso necessário
+
+import { useFetch } from './hooks/useFetch';
 
 type Repository = {
   full_name: string;
@@ -9,16 +8,13 @@ type Repository = {
 }
 
 function App() {
-  const {data, isFetching} = useQuery<Repository[]>('repos',async ()=>{
-    const response = await axios.get('https://api.github.com/users/sthephanyel/repos')
-    return response.data;
-  });
+  const {data: repositories, isFetching} = useFetch<Repository[]>('https://api.github.com/users/sthephanyel/repos');
 
   return (
     <div>
       <ul>
-        {isFetching && <p>Carregando...</p>}
-        {data?.map((user,key) =>{
+        {isFetching && <p>CArregando...</p>}
+        {repositories?.map((user,key) =>{
           return(
             <li key={key}>
               <strong>{user.full_name}</strong>
