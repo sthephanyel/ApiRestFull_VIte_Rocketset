@@ -14,5 +14,5 @@ Para utilizar o seu git, basta ir na pasta <br>
 >src > pages > Repox.tsx<br>
 Na linha 14, e mudar o link utilizado pelo axios.<br>
 ![image](https://user-images.githubusercontent.com/62970346/179644068-1fd5ae02-403d-414e-9f6e-2c3617329b81.png)
-<br>
+
 ![image](https://user-images.githubusercontent.com/62970346/179643767-715ab7ab-3088-4f4f-a875-3d295f755e0d.png)
